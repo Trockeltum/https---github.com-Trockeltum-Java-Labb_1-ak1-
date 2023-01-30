@@ -28,7 +28,6 @@ public class Game {
 		if(keyboard.isKeyDown(Key.Right)){
 			this.spelare.setX(this.spelare.getX()+5);
 		}
-		
 
 		
 		if(tickcount%40 == 0){
