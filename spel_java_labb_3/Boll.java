@@ -3,6 +3,10 @@ import java.awt.Graphics2D;
 import java.lang.Math;
 
 public class Boll extends ColoredBox{
+    int speed_Y = 2*2;
+    int speed_X = 2;
+    int spelar_hp = 3;
+    
     public Boll(int x, int y, int width, int height){
         super(x,y,width,height,Color.green);
     }
@@ -12,19 +16,10 @@ public class Boll extends ColoredBox{
 		graphics.fillOval(this.getX(),this.getY(),this.getWidth(),this.getHeight());
     };
 
-    @Override
+    //@Override
     public void update(Keyboard keyboard){
-        if(this.getY()>620){
-            System.out.println("Score: ");
-            System.exit(0);
-        }
-        //if (DetectCollision()==true){
-        //    bounce(DetectCollision());
-            //Score++;
-            //begin=0;
-        //}
-        
-        this.setY(getY()+1);
-        this.setX(getX()+1);
+        this.setY(getY()+speed_Y);
+        this.setX(getX()+speed_X);
     }
+
 }

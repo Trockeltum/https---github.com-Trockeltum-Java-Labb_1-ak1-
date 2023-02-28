@@ -9,25 +9,40 @@ public class Boxes{
         int j =0;
         int ii = 0;
         for(int i=0;i<antal;i++){
-            if(i!=0 && i%40==0){
+            if(i!=0 && i%10==0){
                 j += 1;
                 ii=0;
             }
-            CyanBox cyanbox = new CyanBox(ii*20,20*j,19,19);
+            CyanBox cyanbox = new CyanBox(ii*20*4,20*j*4,19*4,19*4);
             this.lador.add(cyanbox);
             ii++;
             
         }
     }
+    public void draw(Graphics2D Graphics){
+        for(int i=0; i<len_squares();i++){
+            get_square(i).draw(Graphics);
+        }
+    }
+    public int Total_hp(){
+        int Total_hp = 0;
+        for(int i=0; i<len_squares();i++){
+            Total_hp += get_square(i).hp;
+        }
+        return Total_hp;
+    }
+    public int alive(){
+        for(int i=0;i<len_squares();i++){
+            get_square(i).dead = 1;
+        }
+        return 0;
+    }
+
     public CyanBox get_square(int i){
         return this.lador.get(i);
     }
-    
-    public void draw(Graphics2D graphics,int antal){
-        for(int i=0; i<antal;i++){
-            graphics.setColor(Color.cyan);
-            graphics.drawRect(get_square(i).getX(), get_square(i).getY(), get_square(i).getWidth(), get_square(i).getHeight());
-        }
 
+    public int len_squares(){
+        return this.lador.size();
     }
 }

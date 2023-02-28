@@ -49,7 +49,6 @@ public class Game {
 		this.spelare.draw(graphics);
 		//this.blueBox.draw(graphics);
 		//this.redBox.draw(graphics);
-		
 	}
 	
 }
