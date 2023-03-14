@@ -3,8 +3,8 @@ import java.awt.Graphics2D;
 import java.lang.Math;
 
 public class Boll extends ColoredBox{
-    int speed_Y = 2*2;
-    int speed_X = 2;
+    int speed_Y = 6;
+    int speed_X = -1;
     int spelar_hp = 3;
     
     public Boll(int x, int y, int width, int height){
